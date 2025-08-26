@@ -561,6 +561,9 @@
         }
         .shape-shape {
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .shape-circle {
             width: 80px;
@@ -589,6 +592,11 @@
             font-size: 80px;
             color: #5e35b1;
             line-height: 1;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .shape-name {
             font-weight: bold;
@@ -1616,7 +1624,7 @@
                 <div class="options-container" id="optionsContainer">
                     ${shapes.map(shape => `
                         <div class="shape-option" onclick="playAudio('${shape.name}')">
-                            <div class="shape-shape shape-${shape.class}"></div>
+                            <div class="shape-shape shape-${shape.class}">${shape.class === 'star' ? '⭐' : ''}</div>
                             <div class="shape-name">${shape.ptName}</div>
                         </div>
                     `).join('')}
@@ -1713,7 +1721,7 @@
                     <div class="options-container" id="optionsContainer">
                         ${shuffledOptions.map(option => `
                             <div class="shape-option" onclick="checkShapesAnswer(${option.isCorrect}, this)">
-                                <div class="shape-shape shape-${option.shape.class}"></div>
+                                <div class="shape-shape shape-${option.shape.class}">${option.shape.class === 'star' ? '⭐' : ''}</div>
                                 <div class="shape-name">${option.shape.ptName}</div>
                             </div>
                         `).join('')}
@@ -1834,5 +1842,4 @@
         }, { once: true });
     </script>
 </body>
-
 </html>
