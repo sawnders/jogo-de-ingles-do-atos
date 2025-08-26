@@ -130,9 +130,18 @@
             margin-bottom: 10px;
             font-size: 2em;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 5px;
+        }
+        .game-title-top {
+            font-size: 0.8em;
+            font-weight: normal;
+        }
+        .game-title-bottom {
+            font-size: 1.2em;
+            font-weight: bold;
         }
         .subtitle {
             color: #666;
@@ -742,10 +751,10 @@
 <body>
     <!-- Tela Inicial Personalizada -->
     <div class="start-screen" id="startScreen">
-        <!-- Imagem local com nome alterado para logo-atos.png -->
+        <!-- Imagem local com caminho alterado -->
         <img src="logo-atos.png" alt="Welcome" class="welcome-image">
         
-        <button class="enter-button" onclick="showMainMenu()">
+        <button class="enter-button" onclick="showMainMenu(); playClickSound();">
             Entrar
         </button>
     </div>
@@ -754,31 +763,31 @@
         <!-- Menu Principal -->
         <div class="main-menu" id="mainMenu">
             <h1>
-                <span>🌟</span>
-                Jogo de Inglês de Atos Emanuel
+                <span class="game-title-top">Jogo de Inglês</span>
+                <span class="game-title-bottom">Atos Emanuel</span>
                 <span>🌟</span>
             </h1>
             <p class="welcome-text">
                 Escolha uma categoria para começar a aprender!
             </p>
             <div class="menu-buttons">
-                <button class="menu-button solar" onclick="showSubmenu('solar')">
+                <button class="menu-button solar" onclick="showSubmenu('solar'); playClickSound();">
                     <span>🌞</span>
                     Sistema Solar
                 </button>
-                <button class="menu-button colors" onclick="showSubmenu('colors')">
+                <button class="menu-button colors" onclick="showSubmenu('colors'); playClickSound();">
                     <span>🎨</span>
                     Cores
                 </button>
-                <button class="menu-button numbers" onclick="showSubmenu('numbers')">
+                <button class="menu-button numbers" onclick="showSubmenu('numbers'); playClickSound();">
                     <span>🔢</span>
                     Números
                 </button>
-                <button class="menu-button shapes" onclick="showSubmenu('shapes')">
+                <button class="menu-button shapes" onclick="showSubmenu('shapes'); playClickSound();">
                     <span>📐</span>
                     Formas
                 </button>
-                <button class="menu-button exit" onclick="showStartScreen()">
+                <button class="menu-button exit" onclick="showStartScreen(); playBackSound();">
                     <span>🏠</span>
                     Sair
                 </button>
@@ -792,17 +801,17 @@
                 <span>🪐</span>
             </h1>
             <div class="submenu-buttons">
-                <button class="submenu-button" onclick="startSolarPronunciation()">
+                <button class="submenu-button" onclick="startSolarPronunciation(); playClickSound();">
                     <span>🔊</span>
                     Pronúncia
                 </button>
-                <button class="submenu-button" onclick="startSolarGame()">
+                <button class="submenu-button" onclick="startSolarGame(); playClickSound();">
                     <span>🎮</span>
                     Planetas
                 </button>
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" onclick="showMainMenu()">
+                <button class="nav-button" onclick="showMainMenu(); playBackSound();">
                     <span>⬅️</span>
                     Voltar
                 </button>
@@ -816,17 +825,17 @@
                 <span>🌈</span>
             </h1>
             <div class="submenu-buttons">
-                <button class="submenu-button" onclick="startColorsPronunciation()">
+                <button class="submenu-button" onclick="startColorsPronunciation(); playClickSound();">
                     <span>🔊</span>
                     Pronúncia
                 </button>
-                <button class="submenu-button" onclick="startColorsGame()">
+                <button class="submenu-button" onclick="startColorsGame(); playClickSound();">
                     <span>🎮</span>
                     Seleção
                 </button>
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" onclick="showMainMenu()">
+                <button class="nav-button" onclick="showMainMenu(); playBackSound();">
                     <span>⬅️</span>
                     Voltar
                 </button>
@@ -840,17 +849,17 @@
                 <span>📊</span>
             </h1>
             <div class="submenu-buttons">
-                <button class="submenu-button" onclick="startNumbersPronunciation()">
+                <button class="submenu-button" onclick="startNumbersPronunciation(); playClickSound();">
                     <span>🔊</span>
                     Pronúncia
                 </button>
-                <button class="submenu-button" onclick="showNumbersPracticeMenu()">
+                <button class="submenu-button" onclick="showNumbersPracticeMenu(); playClickSound();">
                     <span>🎮</span>
                     Prática
                 </button>
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" onclick="showMainMenu()">
+                <button class="nav-button" onclick="showMainMenu(); playBackSound();">
                     <span>⬅️</span>
                     Voltar
                 </button>
@@ -864,25 +873,25 @@
                 <span>📊</span>
             </h1>
             <div class="submenu-buttons">
-                <button class="submenu-button" onclick="startNumbersPractice('0-10')">
+                <button class="submenu-button" onclick="startNumbersPractice('0-10'); playClickSound();">
                     <span>🔢</span>
                     0 a 10
                 </button>
-                <button class="submenu-button" onclick="startNumbersPractice('11-20')">
+                <button class="submenu-button" onclick="startNumbersPractice('11-20'); playClickSound();">
                     <span>🔢</span>
                     11 a 20
                 </button>
-                <button class="submenu-button" onclick="startNumbersPractice('21-30')">
+                <button class="submenu-button" onclick="startNumbersPractice('21-30'); playClickSound();">
                     <span>🔢</span>
                     21 a 30
                 </button>
-                <button class="submenu-button" onclick="startNumbersPractice('Dezenas')">
+                <button class="submenu-button" onclick="startNumbersPractice('Dezenas'); playClickSound();">
                     <span>🔢</span>
                     Dezenas (10-90)
                 </button>
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" onclick="showSubmenu('numbers')">
+                <button class="nav-button" onclick="showSubmenu('numbers'); playBackSound();">
                     <span>⬅️</span>
                     Voltar
                 </button>
@@ -896,17 +905,17 @@
                 <span>🔷</span>
             </h1>
             <div class="submenu-buttons">
-                <button class="submenu-button" onclick="startShapesPronunciation()">
+                <button class="submenu-button" onclick="startShapesPronunciation(); playClickSound();">
                     <span>🔊</span>
                     Pronúncia
                 </button>
-                <button class="submenu-button" onclick="startShapesGame()">
+                <button class="submenu-button" onclick="startShapesGame(); playClickSound();">
                     <span>🎮</span>
                     Prática
                 </button>
             </div>
             <div class="nav-buttons">
-                <button class="nav-button" onclick="showMainMenu()">
+                <button class="nav-button" onclick="showMainMenu(); playBackSound();">
                     <span>⬅️</span>
                     Voltar
                 </button>
@@ -925,7 +934,7 @@
             <h2>Parabéns, Atos!</h2>
             <p>Você completou todas as tarefas!</p>
             <p style="margin-top: 20px; color: #666;">Continue assim!</p>
-            <button class="start-button" onclick="backToSubmenu()" style="margin-top: 20px;">
+            <button class="start-button" onclick="backToSubmenu(); playClickSound();" style="margin-top: 20px;">
                 <span class="start-icon">🏠</span>
                 Voltar
             </button>
@@ -1102,6 +1111,43 @@
                 }, index * 150);
             });
         }
+        // Sons para cliques em botões
+        function playClickSound() {
+            if (isMuted) return;
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.type = 'sine';
+            oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+            oscillator.frequency.exponentialRampToValueAtTime(1200, audioContext.currentTime + 0.1);
+            
+            gainNode.gain.setValueAtTime(0.2, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.2);
+        }
+        function playBackSound() {
+            if (isMuted) return;
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.type = 'sine';
+            oscillator.frequency.setValueAtTime(600, audioContext.currentTime);
+            oscillator.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.1);
+            
+            gainNode.gain.setValueAtTime(0.15, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.15);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.15);
+        }
         // Controle de mudo
         function toggleMute() {
             isMuted = !isMuted;
@@ -1158,6 +1204,9 @@
         let currentNumberGroup = '';
         let currentNumberToGuess = null;
         let remainingNumbers = [];
+        let correctAnswers = new Set(); // Armazena as respostas corretas
+        let totalItems = 0; // Total de itens na categoria atual
+        let currentCorrectItem = null; // Item correto da rodada atual
         // Sistema Solar - Pronúncia
         function startSolarPronunciation() {
             currentSubmenu = 'solar';
@@ -1180,7 +1229,7 @@
                     `).join('')}
                 </div>
                 <div class="nav-buttons">
-                    <button class="nav-button" onclick="showSubmenu('solar')">
+                    <button class="nav-button" onclick="showSubmenu('solar'); playBackSound();">
                         <span>⬅️</span>
                         Voltar
                     </button>
@@ -1197,52 +1246,29 @@
             initSolarGame();
         }
         function initSolarGame() {
-            currentTask = 0;
-            usedItems.clear();
-            completedTasks.clear();
-            
-            let newOrder;
-            do {
-                newOrder = shuffleArray([...celestialBodies]);
-            } while (isSameOrder(newOrder, lastGameOrder));
-            
-            tasks = newOrder;
-            lastGameOrder = [...newOrder];
-            
+            correctAnswers.clear();
+            totalItems = celestialBodies.length;
             loadSolarTask();
         }
         function loadSolarTask() {
-            if (currentTask >= tasks.length) {
+            // Verifica se todas as palavras foram acertadas
+            if (correctAnswers.size === totalItems) {
                 showCelebration();
                 return;
             }
-            const correctBody = tasks[currentTask];
-            usedItems.add(correctBody.name);
             
+            // Seleciona uma palavra correta que ainda não foi acertada
+            const availableBodies = celestialBodies.filter(body => !correctAnswers.has(body.name));
+            const correctBody = availableBodies[Math.floor(Math.random() * availableBodies.length)];
+            currentCorrectItem = correctBody;
+            
+            // Seleciona uma palavra incorreta
             let wrongBody = null;
-            const availableBodies = celestialBodies.filter(body => 
-                !usedItems.has(body.name) && body.name !== correctBody.name
-            );
-            
-            if (availableBodies.length > 0) {
-                wrongBody = availableBodies[Math.floor(Math.random() * availableBodies.length)];
+            const otherBodies = celestialBodies.filter(body => body.name !== correctBody.name);
+            if (otherBodies.length > 0) {
+                wrongBody = otherBodies[Math.floor(Math.random() * otherBodies.length)];
             } else {
-                const correctBodiesSoFar = tasks.slice(0, currentTask + 1).map(t => t.name);
-                usedItems = new Set(correctBodiesSoFar);
-                
-                const remainingBodies = celestialBodies.filter(body => 
-                    !usedItems.has(body.name) && body.name !== correctBody.name
-                );
-                
-                if (remainingBodies.length > 0) {
-                    wrongBody = remainingBodies[Math.floor(Math.random() * remainingBodies.length)];
-                } else {
-                    wrongBody = celestialBodies.find(body => body.name !== correctBody.name);
-                }
-            }
-            
-            if (wrongBody) {
-                usedItems.add(wrongBody.name);
+                wrongBody = celestialBodies.find(body => body.name !== correctBody.name);
             }
             
             const options = [
@@ -1261,7 +1287,7 @@
                 </h1>
                 <div class="progress-container">
                     <div class="progress-bar" id="progressBar"></div>
-                    <div class="progress-text" id="progressText">${currentTask}/${tasks.length}</div>
+                    <div class="progress-text" id="progressText">${correctAnswers.size}/${totalItems}</div>
                 </div>
                 <div class="task-container">
                     <button class="audio-button" onclick="playCurrentAudio()">
@@ -1278,7 +1304,7 @@
                     </div>
                 </div>
                 <div class="nav-buttons">
-                    <button class="nav-button" onclick="showSubmenu('solar')">
+                    <button class="nav-button" onclick="showSubmenu('solar'); playBackSound();">
                         <span>⬅️</span>
                         Voltar
                     </button>
@@ -1289,18 +1315,17 @@
             setTimeout(() => playCurrentAudio(), 500);
         }
         function checkSolarAnswer(isCorrect, element) {
-            if (isProcessing || completedTasks.has(currentTask)) return;
+            if (isProcessing) return;
             
             isProcessing = true;
             
             if (isCorrect) {
                 element.classList.add('correct');
                 playSuccessSound();
-                completedTasks.add(currentTask);
+                correctAnswers.add(currentCorrectItem.name);
+                updateProgress();
                 
                 setTimeout(() => {
-                    currentTask++;
-                    updateProgress();
                     loadSolarTask();
                     isProcessing = false;
                 }, 1000);
@@ -1308,16 +1333,15 @@
                 element.classList.add('incorrect');
                 playErrorSound();
                 
+                // Mostra a resposta correta
                 const options = document.querySelectorAll('.planet-option');
                 options.forEach(opt => {
-                    if (opt.querySelector('img').src === tasks[currentTask].image) {
+                    if (opt.querySelector('img').src === currentCorrectItem.image) {
                         opt.classList.add('correct');
                     }
                 });
                 
                 setTimeout(() => {
-                    currentTask++;
-                    updateProgress();
                     loadSolarTask();
                     isProcessing = false;
                 }, 2000);
@@ -1344,7 +1368,7 @@
                     `).join('')}
                 </div>
                 <div class="nav-buttons">
-                    <button class="nav-button" onclick="showSubmenu('colors')">
+                    <button class="nav-button" onclick="showSubmenu('colors'); playBackSound();">
                         <span>⬅️</span>
                         Voltar
                     </button>
@@ -1361,52 +1385,29 @@
             initColorsGame();
         }
         function initColorsGame() {
-            currentTask = 0;
-            usedItems.clear();
-            completedTasks.clear();
-            
-            let newOrder;
-            do {
-                newOrder = shuffleArray([...colors]);
-            } while (isSameOrder(newOrder, lastGameOrder));
-            
-            tasks = newOrder;
-            lastGameOrder = [...newOrder];
-            
+            correctAnswers.clear();
+            totalItems = colors.length;
             loadColorsTask();
         }
         function loadColorsTask() {
-            if (currentTask >= tasks.length) {
+            // Verifica se todas as cores foram acertadas
+            if (correctAnswers.size === totalItems) {
                 showCelebration();
                 return;
             }
-            const correctColor = tasks[currentTask];
-            usedItems.add(correctColor.name);
             
+            // Seleciona uma cor correta que ainda não foi acertada
+            const availableColors = colors.filter(color => !correctAnswers.has(color.name));
+            const correctColor = availableColors[Math.floor(Math.random() * availableColors.length)];
+            currentCorrectItem = correctColor;
+            
+            // Seleciona uma cor incorreta
             let wrongColor = null;
-            const availableColors = colors.filter(color => 
-                !usedItems.has(color.name) && color.name !== correctColor.name
-            );
-            
-            if (availableColors.length > 0) {
-                wrongColor = availableColors[Math.floor(Math.random() * availableColors.length)];
+            const otherColors = colors.filter(color => color.name !== correctColor.name);
+            if (otherColors.length > 0) {
+                wrongColor = otherColors[Math.floor(Math.random() * otherColors.length)];
             } else {
-                const correctColorsSoFar = tasks.slice(0, currentTask + 1).map(t => t.name);
-                usedItems = new Set(correctColorsSoFar);
-                
-                const remainingColors = colors.filter(color => 
-                    !usedItems.has(color.name) && color.name !== correctColor.name
-                );
-                
-                if (remainingColors.length > 0) {
-                    wrongColor = remainingColors[Math.floor(Math.random() * remainingColors.length)];
-                } else {
-                    wrongColor = colors.find(color => color.name !== correctColor.name);
-                }
-            }
-            
-            if (wrongColor) {
-                usedItems.add(wrongColor.name);
+                wrongColor = colors.find(color => color.name !== correctColor.name);
             }
             
             const options = [
@@ -1425,7 +1426,7 @@
                 </h1>
                 <div class="progress-container">
                     <div class="progress-bar" id="progressBar"></div>
-                    <div class="progress-text" id="progressText">${currentTask}/${tasks.length}</div>
+                    <div class="progress-text" id="progressText">${correctAnswers.size}/${totalItems}</div>
                 </div>
                 <div class="task-container">
                     <button class="audio-button" onclick="playCurrentAudio()">
@@ -1441,7 +1442,7 @@
                     </div>
                 </div>
                 <div class="nav-buttons">
-                    <button class="nav-button" onclick="showSubmenu('colors')">
+                    <button class="nav-button" onclick="showSubmenu('colors'); playBackSound();">
                         <span>⬅️</span>
                         Voltar
                     </button>
@@ -1452,18 +1453,17 @@
             setTimeout(() => playCurrentAudio(), 500);
         }
         function checkColorsAnswer(isCorrect, element) {
-            if (isProcessing || completedTasks.has(currentTask)) return;
+            if (isProcessing) return;
             
             isProcessing = true;
             
             if (isCorrect) {
                 element.classList.add('correct');
                 playSuccessSound();
-                completedTasks.add(currentTask);
+                correctAnswers.add(currentCorrectItem.name);
+                updateProgress();
                 
                 setTimeout(() => {
-                    currentTask++;
-                    updateProgress();
                     loadColorsTask();
                     isProcessing = false;
                 }, 1000);
@@ -1471,16 +1471,15 @@
                 element.classList.add('incorrect');
                 playErrorSound();
                 
+                // Mostra a resposta correta
                 const options = document.querySelectorAll('.color-option');
                 options.forEach(opt => {
-                    if (opt.textContent.trim() === tasks[currentTask].ptName) {
+                    if (opt.textContent.trim() === currentCorrectItem.ptName) {
                         opt.classList.add('correct');
                     }
                 });
                 
                 setTimeout(() => {
-                    currentTask++;
-                    updateProgress();
                     loadColorsTask();
                     isProcessing = false;
                 }, 2000);
@@ -1508,7 +1507,7 @@
                     </div>
                 `).join('')}
                 <div class="nav-buttons">
-                    <button class="nav-button" onclick="showSubmenu('numbers')">
+                    <button class="nav-button" onclick="showSubmenu('numbers'); playBackSound();">
                         <span>⬅️</span>
                         Voltar
                     </button>
@@ -1524,7 +1523,8 @@
             showGameArea();
             
             const numbers = numberGroups[groupName];
-            completedTasks.clear();
+            correctAnswers.clear();
+            totalItems = numbers.length;
             remainingNumbers = [...numbers];
             
             loadNumbersPractice(groupName, numbers);
@@ -1544,7 +1544,7 @@
                     </button>
                     <div class="number-grid" id="numbersGrid">
                         ${numbers.map(num => `
-                            <div class="number-option ${completedTasks.has(num) ? 'completed' : ''}" 
+                            <div class="number-option ${correctAnswers.has(num) ? 'completed' : ''}" 
                                  onclick="checkNumberAnswer(${num}, this)" 
                                  data-number="${num}">
                                 ${num}
@@ -1553,7 +1553,7 @@
                     </div>
                 </div>
                 <div class="nav-buttons">
-                    <button class="nav-button" onclick="showNumbersPracticeMenu()">
+                    <button class="nav-button" onclick="showNumbersPracticeMenu(); playBackSound();">
                         <span>⬅️</span>
                         Voltar
                     </button>
@@ -1576,14 +1576,14 @@
             }
         }
         function checkNumberAnswer(number, element) {
-            if (isProcessing || completedTasks.has(number)) return;
+            if (isProcessing || correctAnswers.has(number)) return;
             
             isProcessing = true;
             
             if (number === currentNumberToGuess) {
                 element.classList.add('correct');
                 playSuccessSound();
-                completedTasks.add(number);
+                correctAnswers.add(number);
                 element.classList.add('completed');
                 element.onclick = null;
                 
@@ -1630,7 +1630,7 @@
                     `).join('')}
                 </div>
                 <div class="nav-buttons">
-                    <button class="nav-button" onclick="showSubmenu('shapes')">
+                    <button class="nav-button" onclick="showSubmenu('shapes'); playBackSound();">
                         <span>⬅️</span>
                         Voltar
                     </button>
@@ -1647,52 +1647,29 @@
             initShapesGame();
         }
         function initShapesGame() {
-            currentTask = 0;
-            usedItems.clear();
-            completedTasks.clear();
-            
-            let newOrder;
-            do {
-                newOrder = shuffleArray([...shapes]);
-            } while (isSameOrder(newOrder, lastGameOrder));
-            
-            tasks = newOrder;
-            lastGameOrder = [...newOrder];
-            
+            correctAnswers.clear();
+            totalItems = shapes.length;
             loadShapesTask();
         }
         function loadShapesTask() {
-            if (currentTask >= tasks.length) {
+            // Verifica se todas as formas foram acertadas
+            if (correctAnswers.size === totalItems) {
                 showCelebration();
                 return;
             }
-            const correctShape = tasks[currentTask];
-            usedItems.add(correctShape.name);
             
+            // Seleciona uma forma correta que ainda não foi acertada
+            const availableShapes = shapes.filter(shape => !correctAnswers.has(shape.name));
+            const correctShape = availableShapes[Math.floor(Math.random() * availableShapes.length)];
+            currentCorrectItem = correctShape;
+            
+            // Seleciona uma forma incorreta
             let wrongShape = null;
-            const availableShapes = shapes.filter(shape => 
-                !usedItems.has(shape.name) && shape.name !== correctShape.name
-            );
-            
-            if (availableShapes.length > 0) {
-                wrongShape = availableShapes[Math.floor(Math.random() * availableShapes.length)];
+            const otherShapes = shapes.filter(shape => shape.name !== correctShape.name);
+            if (otherShapes.length > 0) {
+                wrongShape = otherShapes[Math.floor(Math.random() * otherShapes.length)];
             } else {
-                const correctShapesSoFar = tasks.slice(0, currentTask + 1).map(t => t.name);
-                usedItems = new Set(correctShapesSoFar);
-                
-                const remainingShapes = shapes.filter(shape => 
-                    !usedItems.has(shape.name) && shape.name !== correctShape.name
-                );
-                
-                if (remainingShapes.length > 0) {
-                    wrongShape = remainingShapes[Math.floor(Math.random() * remainingShapes.length)];
-                } else {
-                    wrongShape = shapes.find(shape => shape.name !== correctShape.name);
-                }
-            }
-            
-            if (wrongShape) {
-                usedItems.add(wrongShape.name);
+                wrongShape = shapes.find(shape => shape.name !== correctShape.name);
             }
             
             const options = [
@@ -1711,7 +1688,7 @@
                 </h1>
                 <div class="progress-container">
                     <div class="progress-bar" id="progressBar"></div>
-                    <div class="progress-text" id="progressText">${currentTask}/${tasks.length}</div>
+                    <div class="progress-text" id="progressText">${correctAnswers.size}/${totalItems}</div>
                 </div>
                 <div class="task-container">
                     <button class="audio-button" onclick="playCurrentAudio()">
@@ -1728,7 +1705,7 @@
                     </div>
                 </div>
                 <div class="nav-buttons">
-                    <button class="nav-button" onclick="showSubmenu('shapes')">
+                    <button class="nav-button" onclick="showSubmenu('shapes'); playBackSound();">
                         <span>⬅️</span>
                         Voltar
                     </button>
@@ -1739,18 +1716,17 @@
             setTimeout(() => playCurrentAudio(), 500);
         }
         function checkShapesAnswer(isCorrect, element) {
-            if (isProcessing || completedTasks.has(currentTask)) return;
+            if (isProcessing) return;
             
             isProcessing = true;
             
             if (isCorrect) {
                 element.classList.add('correct');
                 playSuccessSound();
-                completedTasks.add(currentTask);
+                correctAnswers.add(currentCorrectItem.name);
+                updateProgress();
                 
                 setTimeout(() => {
-                    currentTask++;
-                    updateProgress();
                     loadShapesTask();
                     isProcessing = false;
                 }, 1000);
@@ -1758,17 +1734,16 @@
                 element.classList.add('incorrect');
                 playErrorSound();
                 
+                // Mostra a resposta correta
                 const options = document.querySelectorAll('.shape-option');
                 options.forEach(opt => {
                     const shapeName = opt.querySelector('.shape-name').textContent;
-                    if (shapeName === tasks[currentTask].ptName) {
+                    if (shapeName === currentCorrectItem.ptName) {
                         opt.classList.add('correct');
                     }
                 });
                 
                 setTimeout(() => {
-                    currentTask++;
-                    updateProgress();
                     loadShapesTask();
                     isProcessing = false;
                 }, 2000);
@@ -1789,11 +1764,11 @@
             
             let audioText = '';
             if (currentGame === 'solarGame') {
-                audioText = tasks[currentTask].name;
+                audioText = currentCorrectItem.name;
             } else if (currentGame === 'colorsGame') {
-                audioText = tasks[currentTask].name;
+                audioText = currentCorrectItem.name;
             } else if (currentGame === 'shapesGame') {
-                audioText = tasks[currentTask].name;
+                audioText = currentCorrectItem.name;
             }
             
             createSpeechAudio(audioText).then(() => {
@@ -1804,13 +1779,13 @@
         function updateProgress() {
             const progressBar = document.getElementById('progressBar');
             const progressText = document.getElementById('progressText');
-            const progress = (currentTask / tasks.length) * 100;
+            const progress = (correctAnswers.size / totalItems) * 100;
             
             if (progressBar) {
                 progressBar.style.width = `${progress}%`;
             }
             if (progressText) {
-                progressText.textContent = `${currentTask}/${tasks.length}`;
+                progressText.textContent = `${correctAnswers.size}/${totalItems}`;
             }
         }
         function showCelebration() {
